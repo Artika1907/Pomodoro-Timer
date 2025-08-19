@@ -24,4 +24,7 @@ It helps you manage work and break sessions using the Pomodoro Technique to boos
    ```bash
    git clone https://github.com/Artika1907/Pomodoro-Timer.git
 
+## Site is Live at
+    https://artika1907.github.io/Pomodoro-Timer/
+
 
