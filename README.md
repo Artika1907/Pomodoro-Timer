@@ -17,19 +17,11 @@ It helps you manage work and break sessions using the Pomodoro Technique to boos
 
 ---
 
-## 📸 Screenshots
-
-### Light Mode
-![Light Mode Screenshot]("C:\Users\artik\Pictures\Screenshots\Screenshot 2025-08-19 120951.png")
-
-### Dark Mode
-![Dark Mode Screenshot]("C:\Users\artik\Pictures\Screenshots\Screenshot 2025-08-19 121205.png")
-
----
 
 ## 🛠️ Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Artika1907/Pomodoro-Timer.git
+
 
