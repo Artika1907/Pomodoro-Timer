@@ -1,0 +1,410 @@
+:root {
+  --primary: #ff6347;
+  --secondary: #4CAF50;
+  --text-light: #333;
+  --bg-light: #f5f5f5;
+  --text-dark: #f5f5f5;
+  --bg-dark: #181824;
+  --card-dark: #23233a;
+  --input-dark: #23233a;
+  --input-border-dark: #374151;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: var(--transition);
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Attractive dark mode for main containers */
+body.dark .card,
+body.dark .stat-card,
+body.dark .timer-display,
+body.dark .task-panel {
+  background: var(--card-dark);
+  color: var(--text-dark);
+  box-shadow: 0 2px 16px #0004;
+}
+
+body.dark .btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+body.dark .btn-secondary {
+  background: #374151;
+  color: #fff;
+}
+
+body.dark .btn-danger {
+  background: #b91c1c;
+  color: #fff;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background: var(--input-dark);
+  color: var(--text-dark);
+  border-color: var(--input-border-dark);
+}
+
+body.dark .slider-toggle {
+  background: #374151;
+}
+
+/* Light mode (default) */
+.timer-container {
+  max-width: 600px;
+}
+
+.timer-display {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.timer-display.work {
+  background-color: rgba(255, 99, 71, 0.1);
+  border: 8px solid var(--primary);
+}
+
+.timer-display.break {
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 8px solid var(--secondary);
+}
+
+.progress-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  transition: var(--transition);
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  transition: var(--transition);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: var(--transition);
+  border-radius: 34px;
+}
+
+.slider-toggle:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+}
+
+input:checked + .slider-toggle {
+  background-color: var(--primary);
+}
+
+input:checked + .slider-toggle:before {
+  transform: translateX(26px);
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.light .card {
+  background-color: white;
+}
+
+.stat-card {
+  transition: var(--transition);
+  transform: translateY(0);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Task Panel Styles */
+.task-panel {
+  max-width: 350px;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 2em 1.5em;
+  font-family: 'Poppins', sans-serif;
+}
+.task-panel h2 {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.task-form label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+.task-form input[type="text"],
+.task-form textarea,
+.task-form input[type="date"],
+.task-form select {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+.task-form textarea {
+  resize: vertical;
+}
+.task-list {
+  margin-top: 2em;
+}
+.task-list h3 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+#tasksUl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#tasksUl li {
+  background: #f9f9f9;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.7em;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  box-shadow: 0 1px 3px #0001;
+}
+#tasksUl li.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+#tasksUl li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-left: auto;
+  color: #ff6b81;
+  transition: color 0.2s;
+}
+#tasksUl li button:hover {
+  color: #ff4757;
+}
+#tasksUl input[type="checkbox"] {
+  accent-color: #ff6b81;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .task-panel {
+    max-width: 100%;
+    padding: 1em 0.5em;
+  }
+}
+
+/* Dark mode for Task Panel */
+body.dark .task-panel {
+  background: #222;
+  color: #fff;
+}
+body.dark #tasksUl li {
+  background: #333;
+}
+body.dark .task-form input,
+body.dark .task-form textarea,
+body.dark .task-form select {
+  background: oklch(38.666% 0.00004 271.152);
+  color: #fff;
+  border-color: #666;
+}
+body.dark #tasksUl li button {
+  color: #70a1ff;
+}
+body.dark #tasksUl li button:hover {
+  color: #1e90ff
+}
+
+/* Sidebar container in dark mode */
+.dark aside {
+  background-color: #1e1e26; /* Darker than gray-800 */
+  color: #ffffff;
+}
+
+/* Form elements inside sidebar in dark mode */
+.dark aside input,
+.dark aside textarea,
+.dark aside select {
+  background-color: #2b2b34; /* dark background for fields */
+  color: #ffffff;           /* white text */
+  border: 1px solid #555;   /* softer border */
+}
+
+/* Placeholder text in dark mode */
+.dark aside input::placeholder,
+.dark aside textarea::placeholder {
+  color: #bbbbbb;
+}
+
+/* "No tasks" message text */
+.dark #tasksEmpty {
+  color: #aaaaaa;
+}
+
+/* Dark mode slider style */
+body.dark input[type="range"] {
+    accent-color: var(--primary, #ff6347);
+    background-color: transparent;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+body.dark input[type="range"]::-webkit-slider-runnable-track {
+    background: #4b4b5a;
+    border-radius: 10px; /* curve */
+    height: 8px;
+}
+
+body.dark input[type="range"]::-webkit-slider-thumb {
+    background: var(--primary, #ff6347);
+    border: 2px solid #fff;
+    border-radius: 50%; /* round thumb */
+    height: 18px;
+    width: 18px;
+    margin-top: -5px; /* aligns thumb vertically */
+}
+
+/* Firefox */
+body.dark input[type="range"]::-moz-range-track {
+    background: #4b4b5a;
+    border-radius: 10px; /* curve */
+    height: 8px;
+}
+
+body.dark input[type="range"]::-moz-range-thumb {
+    background: var(--primary, #ff6347);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+}
+
